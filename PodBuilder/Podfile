@@ -1,0 +1,10 @@
+platform :ios, '10.0'
+use_frameworks!
+
+target 'helloworld (iOS)' do
+    pod 'AWSAppSync', '~> 3.1.17'
+end
+
+pre_install do |installer|
+    raise "\n🚨  Do not launch 'pod install' manually, use `pod_builder` instead!\n" if !File.exist?('pod_builder.lock')
+end
